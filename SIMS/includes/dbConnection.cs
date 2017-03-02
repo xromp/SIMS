@@ -16,15 +16,15 @@ namespace SIMS.includes
             var connStr = ConfigurationManager.ConnectionStrings["SIMSConnStr"].ConnectionString;
             conn = new SqlConnection(connStr);
         }
-        protected void openConn() {
+        public void openConn() {
             conn.Close();
             conn.Open();
         }
-        protected void closeConn() {
+        public void closeConn() {
             transac.Commit();
             conn.Close();
         }
-        protected void errorTransac() {
+        public void errorTransac() {
             transac.Rollback();
             conn.Close();
         }

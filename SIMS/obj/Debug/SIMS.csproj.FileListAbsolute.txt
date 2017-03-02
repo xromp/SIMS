@@ -88,3 +88,4 @@ D:\SIMS\SIMS\SIMS\bin\Debug\de\DevExpress.Office.v14.1.Core.resources.dll
 D:\SIMS\SIMS\SIMS\bin\Debug\es\DevExpress.Office.v14.1.Core.resources.dll
 D:\SIMS\SIMS\SIMS\bin\Debug\ja\DevExpress.Office.v14.1.Core.resources.dll
 D:\SIMS\SIMS\SIMS\bin\Debug\ru\DevExpress.Office.v14.1.Core.resources.dll
+D:\SIMS\SIMS\SIMS\obj\Debug\SIMS.enrollment.student_inquiry.studentInquiryfrm.resources

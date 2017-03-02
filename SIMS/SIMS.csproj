@@ -64,6 +64,14 @@
     <Compile Include="dashboard\dashboardfrm.Designer.cs">
       <DependentUpon>dashboardfrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="enrollment\student-inquiry\StudentEnrollment.cs" />
+    <Compile Include="enrollment\student-inquiry\studentEnrollmentCtrl.cs" />
+    <Compile Include="enrollment\student-inquiry\studentInquiryfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="enrollment\student-inquiry\studentInquiryfrm.Designer.cs">
+      <DependentUpon>studentInquiryfrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="includes\dbConnection.cs" />
     <Compile Include="includes\dbProcess.cs" />
     <Compile Include="Main.cs">
@@ -77,6 +85,9 @@
     <Compile Include="shared\model\person00.cs" />
     <EmbeddedResource Include="dashboard\dashboardfrm.resx">
       <DependentUpon>dashboardfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="enrollment\student-inquiry\studentInquiryfrm.resx">
+      <DependentUpon>studentInquiryfrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -105,7 +116,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="enrollment\" />
     <Folder Include="global\" />
     <Folder Include="shared\controller\" />
     <Folder Include="shared\form\" />

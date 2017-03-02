@@ -10,9 +10,10 @@ namespace SIMS.includes
 {
     public class dbprocess : dbConnection
     {
-        protected SqlDataReader execQueryStr(string _sql)
+        public SqlDataReader execQueryStr(string _sql)
         {
             SqlCommand cmd = new SqlCommand(_sql, conn, transac);
+            cmd.Transaction = transac;
             cmd.CommandTimeout = 30;
             SqlDataReader reader;
             reader = cmd.ExecuteReader();
