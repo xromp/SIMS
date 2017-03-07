@@ -21,6 +21,7 @@ namespace SIMS.enrollment.student_inquiry
         private void button1_Click(object sender, EventArgs e)
         {
             student.removeStudent();
+            student.personGet();
         }
     }
 }

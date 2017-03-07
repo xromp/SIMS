@@ -14,6 +14,7 @@ namespace SIMS.enrollment.student_inquiry
         public void delete() {
             dbprocess proc = new dbprocess();
             proc.openConn();
+            proc.execQueryStr("DELETE FROM person00 WHERE person00id = 2");
             try
             {
                 proc.transac = proc.conn.BeginTransaction("StudentInsert");
@@ -23,7 +24,7 @@ namespace SIMS.enrollment.student_inquiry
                 proc.execQueryStr("DELETE FROM person00 WHERE person00id = 3'");
                 proc.closeConn();
             }
-            catch (Exception)
+            catch (Exception)      
             {
                 proc.errorTransac();
             }
