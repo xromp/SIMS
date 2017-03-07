@@ -13,7 +13,7 @@ namespace SIMS.dashboard
 
         public dashboardCtrl(dashboardfrm _frm) {
             person00 person = new person00();
-            person.personGet();// get all person
+            person00.get();
         }
     }
 }
