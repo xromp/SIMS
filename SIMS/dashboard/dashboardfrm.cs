@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace SIMS.dashboard
 {
-    public partial class dashboardfrm : Form
+    public partial class dashboardFrm : Form
     {
         dashboardCtrl dashboardCtrl;
-        public dashboardfrm()
+        public dashboardFrm()
         {
             InitializeComponent();
             dashboardCtrl = new dashboardCtrl(this);

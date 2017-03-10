@@ -26,12 +26,12 @@ namespace SIMS.shared.model
         #region Queries
         public static List<person00> get()
         {
-            dbprocess proc = new dbprocess();
+            DbProcess proc = new DbProcess();
             List<person00> person = new List<person00>();
 
             proc.openConn();
             proc.transac = proc.conn.BeginTransaction("person00Get");
-            var reader = proc.execQueryStr("SELECT * FROM person00");
+            var reader = proc.execStoredProc("sp_person00Get");
             while (reader.Read())
             {
                 person00 data = new person00();

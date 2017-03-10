@@ -1,6 +1,6 @@
 ﻿namespace SIMS.dashboard
 {
-    partial class dashboardfrm
+    partial class dashboardFrm
     {
         /// <summary>
         /// Required designer variable.
