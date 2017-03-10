@@ -12,6 +12,21 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,6 +47,11 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'x86|AnyCPU'">
+    <OutputPath>bin\x86\</OutputPath>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -43,6 +63,11 @@
     <Reference Include="DevExpress.XtraLayout.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraNavBar.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\y1gf4suv.5pt\zh-Hans\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
@@ -57,38 +82,54 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="dashboard\dashboardCtrl.cs" />
-    <Compile Include="dashboard\dashboardfrm.cs">
+    <Compile Include="Dashboard\DashboardCtrl.cs" />
+    <Compile Include="Dashboard\DashboardFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="dashboard\dashboardfrm.Designer.cs">
-      <DependentUpon>dashboardfrm.cs</DependentUpon>
+    <Compile Include="Dashboard\DashboardFrm.Designer.cs">
+      <DependentUpon>DashboardFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="enrollment\student-inquiry\StudentEnrollment.cs" />
-    <Compile Include="enrollment\student-inquiry\studentEnrollmentCtrl.cs" />
-    <Compile Include="enrollment\student-inquiry\studentInquiryfrm.cs">
+    <Compile Include="Directives\ImportExcel.cs" />
+    <Compile Include="Enrollment\Student-Inquiry\StudentEnrollment.cs" />
+    <Compile Include="Enrollment\Student-Inquiry\StudentEnrollmentCtrl.cs" />
+    <Compile Include="Enrollment\Student-Inquiry\Student-InquiryFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="enrollment\student-inquiry\studentInquiryfrm.Designer.cs">
-      <DependentUpon>studentInquiryfrm.cs</DependentUpon>
+    <Compile Include="Enrollment\Student-Inquiry\Student-InquiryFrm.Designer.cs">
+      <DependentUpon>Student-InquiryFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="includes\dbConnection.cs" />
-    <Compile Include="includes\dbProcess.cs" />
+    <Compile Include="Includes\DbConnection.cs" />
+    <Compile Include="Includes\DbProcess.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="models\person00.cs" />
+    <Compile Include="Models\Person00.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="shared\model\person00.cs" />
-    <EmbeddedResource Include="dashboard\dashboardfrm.resx">
-      <DependentUpon>dashboardfrm.cs</DependentUpon>
+    <Compile Include="Shared\Helper\CollectionHelper.cs" />
+    <Compile Include="Shared\Helper\GridHelper.cs" />
+    <Compile Include="Shared\Model\Person00.cs" />
+    <Compile Include="Upload\Students\MasterfileUploadCtrl.cs" />
+    <Compile Include="Upload\Students\MasterfileUploadFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Upload\Students\MasterfileUploadFrm.Designer.cs">
+      <DependentUpon>MasterfileUploadFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Upload\Uploadfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Upload\Uploadfrm.Designer.cs">
+      <DependentUpon>Uploadfrm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Dashboard\DashboardFrm.resx">
+      <DependentUpon>DashboardFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="enrollment\student-inquiry\studentInquiryfrm.resx">
-      <DependentUpon>studentInquiryfrm.cs</DependentUpon>
+    <EmbeddedResource Include="Enrollment\Student-Inquiry\Student-InquiryFrm.resx">
+      <DependentUpon>Student-InquiryFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -103,6 +144,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Upload\Students\MasterfileUploadFrm.resx">
+      <DependentUpon>MasterfileUploadFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Upload\UploadFrm.resx">
+      <DependentUpon>Uploadfrm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -117,9 +164,21 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="global\" />
-    <Folder Include="shared\controller\" />
-    <Folder Include="shared\form\" />
+    <Folder Include="Global\" />
+    <Folder Include="Shared\Controller\" />
+    <Folder Include="Shared\Form\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

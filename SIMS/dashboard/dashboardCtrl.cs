@@ -9,9 +9,9 @@ namespace SIMS.dashboard
 {
     class dashboardCtrl {
 
-        dashboardfrm frm;
+        dashboardFrm frm;
 
-        public dashboardCtrl(dashboardfrm _frm) {
+        public dashboardCtrl(dashboardFrm _frm) {
             person00 person = new person00();
             person00.get();
         }

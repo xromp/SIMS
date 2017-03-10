@@ -8,11 +8,12 @@ using System.Data.SqlClient;
 using System.Configuration;
 namespace SIMS.includes
 {
-    public class dbConnection
+    public class DbConnection
     {
         public SqlConnection conn;
         public SqlTransaction transac;
-        public dbConnection() {
+        public SqlDataReader reader;
+        public DbConnection() {
             var connStr = ConfigurationManager.ConnectionStrings["SIMSConnStr"].ConnectionString;
             conn = new SqlConnection(connStr);
         }
@@ -21,11 +22,13 @@ namespace SIMS.includes
             conn.Open();
         }
         public void closeConn() {
+            reader.Close();
             transac.Commit();
             conn.Close();
         }
         public void errorTransac() {
             transac.Rollback();
+            reader.Close();
             conn.Close();
         }
     }

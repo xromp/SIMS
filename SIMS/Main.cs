@@ -24,9 +24,22 @@ namespace SIMS
 
         private void navBarItem2_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            var form = new SIMS.enrollment.student_inquiry.studentInquiryfrm();
+            var form = new SIMS.enrollment.student_inquiry.studentInquiryFrm();
             form.MdiParent = this;
             form.Show();
+        }
+
+        private void navBarControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void navBarItem3_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            var form = new SIMS.Upload.Students.MasterfileUploadFrm();
+            form.MdiParent = this;
+            form.Show();
+
         }
     }
 }

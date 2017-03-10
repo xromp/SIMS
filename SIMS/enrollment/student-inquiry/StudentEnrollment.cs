@@ -12,7 +12,7 @@ namespace SIMS.enrollment.student_inquiry
     class StudentEnrollment
     {
         public void delete() {
-            dbprocess proc = new dbprocess();
+            DbProcess proc = new DbProcess();
             proc.openConn();
             proc.execQueryStr("DELETE FROM person00 WHERE person00id = 2");
             try
@@ -22,6 +22,7 @@ namespace SIMS.enrollment.student_inquiry
                 proc.execQueryStr("DELETE FROM person00 WHERE person00id = 2");
                 proc.execQueryStr("DELETE FROM person00 WHERE person00id = 3");
                 proc.execQueryStr("DELETE FROM person00 WHERE person00id = 3'");
+                var reader = proc.execQueryStr("DELETE FROM person00 WHERE person00id = 3'");
                 proc.closeConn();
             }
             catch (Exception)      
